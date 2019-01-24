@@ -1,8 +1,14 @@
 const fs = require('fs');
-const importStyles = `\nimport './scss/styles.scss'`;
 
-module.exports = (api, opts) => {
-  api.render('./template')
+const importStyles = '\nimport \'./scss/styles.scss\'';
+
+module.exports = (api) => {
+  api.extendPackage({
+    dependencies: {
+      '@thrivehive/eslint-config-vue': '^1.0.2'
+    }
+  });
+  api.render('./template');
   api.onCreateComplete(() => {
     // inject to main.js
     const ext = api.hasPlugin('typescript') ? 'ts' : 'js';
