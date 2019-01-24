@@ -19,6 +19,6 @@ module.exports.lint = (api) => {
   if (api.hasPlugin('eslint')) {
     // eslint-disable-next-line global-require, import/no-unresolved
     const lint = require('@vue/cli-plugin-eslint/lint');
-    lint({ silent: true }, api);
+    lint({ silent: false }, api);
   }
 };
