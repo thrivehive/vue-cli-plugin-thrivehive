@@ -7,6 +7,8 @@ This Vue CLI 3.x plugin does the following:
 - Import `/scss/styles.scss` into `main.js`
 - Install [@thrivehive/eslint-configs](https://github.com/thrivehive/eslint-configs) packages
 - Update eslint config
+- Update lint script to lint entire project
+- Lint and fix project after installation
 
 Add to an existing project
 ```bash
