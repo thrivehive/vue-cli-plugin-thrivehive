@@ -3,7 +3,7 @@ const { injectChanges, lint } = require('./utils');
 module.exports = (api) => {
   api.extendPackage({
     scripts: {
-      line: 'vue-cli-service lint -- ./'
+      lint: 'vue-cli-service lint -- ./'
     },
     devDependencies: {
       '@thrivehive/eslint-config-node': '^1.0.4',
