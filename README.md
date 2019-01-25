@@ -1,5 +1,7 @@
 # vue-cli-plugin-thrivehive
 
+[![npm version](https://badge.fury.io/js/vue-cli-plugin-thrivehive.svg)](https://badge.fury.io/js/vue-cli-plugin-thrivehive)
+
 This Vue CLI 3.x plugin does the following:
 
 - Add SCSS modules folder
