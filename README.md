@@ -12,13 +12,17 @@ This [Vue CLI 3.x](https://cli.vuejs.org/) plugin does the following:
 - Update lint script to lint entire project
 - Lint and fix project after installation
 
-Start a new project with [@thrivehive/vue-preset](https://github.com/thrivehive/vue-preset) for Vue CLI 3.x (recommended):
+# Start a new project
+
+with [@thrivehive/vue-preset](https://github.com/thrivehive/vue-preset) for [Vue CLI 3.x](https://cli.vuejs.org/) (recommended):
 
 ```bash
 vue create --preset thrivehive/vue-preset <project-name>
 ```
 
-Add to an existing project
+# Add to an existing project
 ```bash
+vue add vuetify
+vue add storybook
 vue add thrivehive
 ```
