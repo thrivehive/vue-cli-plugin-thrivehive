@@ -12,7 +12,23 @@ module.exports = (api) => {
   });
   api.render('./template');
   api.onCreateComplete(() => {
-    injectChanges(api);
+    const mainChanges = (
+      '\nimport setup from \'@/utils/setup\';'
+      + '\nimport \'./scss/styles.scss\';'
+      + '\n\nsetup(Vue);'
+    );
+    injectChanges(api, mainChanges, './src/main');
+
+    if (api.hasPlugin('storybook')) {
+      const storybookConfigChanges = (
+        '\nimport Vue from \'vue\';'
+        + '\nimport setup from \'@/utils/setup\';'
+        + '\nimport \'../../src/scss/styles.scss\';'
+        + '\n\nsetup(Vue);'
+      );
+      injectChanges(api, storybookConfigChanges, './config/storybook/config');
+    }
+
     lint(api);
   });
 };

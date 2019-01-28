@@ -1,15 +1,13 @@
 const fs = require('fs');
 
-module.exports.injectChanges = (api) => {
-  // inject import 'styles.scss'; into main.js
-  const importStyles = '\nimport \'./scss/styles.scss\';';
+module.exports.injectChanges = (api, code, path) => {
   const ext = api.hasPlugin('typescript') ? 'ts' : 'js';
-  const mainPath = api.resolve(`./src/main.${ext}`);
+  const mainPath = api.resolve(`${path}.${ext}`);
   const contentMain = fs.readFileSync(mainPath, { encoding: 'utf-8' });
-  if (!contentMain.includes(importStyles)) {
+  if (!contentMain.includes(code)) {
     const lines = contentMain.split(/\r?\n/g).reverse();
     const lastImportIndex = lines.findIndex(line => line.match(/^import/));
-    lines[lastImportIndex] += importStyles;
+    lines[lastImportIndex] += code;
     const output = lines.reverse().join('\n');
     fs.writeFileSync(mainPath, output, { encoding: 'utf-8' });
   }
