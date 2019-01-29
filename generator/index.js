@@ -3,6 +3,7 @@ const { injectChanges, lint } = require('./utils');
 module.exports = (api) => {
   api.extendPackage({
     scripts: {
+      serve: 'vue-cli-service serve --open',
       lint: 'vue-cli-service lint -- ./'
     },
     devDependencies: {
