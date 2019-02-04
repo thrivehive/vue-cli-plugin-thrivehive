@@ -4,7 +4,7 @@ const mainChanges = `
 import '@/utils/setup';`;
 
 const storybookConfigChanges = `
-import Vue from 'vue'
+import Vue from 'vue';
 import Vuetify from 'vuetify';
 import 'vuetify/dist/vuetify.css';
 import '@/utils/setup';
