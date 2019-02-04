@@ -1,9 +1,10 @@
-const { injectChanges, lint } = require('./utils');
+const { injectCode, replaceCode, lint } = require('./utils');
 
 const mainChanges = `
-import setup from '@/utils/setup';`;
+import '@/utils/setup';`;
 
 const storybookConfigChanges = `
+import Vue from 'vue'
 import Vuetify from 'vuetify';
 import 'vuetify/dist/vuetify.css';
 import '@/utils/setup';
@@ -30,10 +31,18 @@ module.exports = (api) => {
   });
   api.render('./template');
   api.onCreateComplete(() => {
-    injectChanges(api, mainChanges, './src/main');
+    injectCode(api, './src/main', mainChanges);
 
     if (api.hasPlugin('storybook')) {
-      injectChanges(api, storybookConfigChanges, './config/storybook/config');
+      /* eslint-disable quotes */
+      const storybookConfigPath = './config/storybook/config';
+      injectCode(api, storybookConfigPath, storybookConfigChanges);
+      replaceCode(
+        api,
+        storybookConfigPath,
+        `import { configure } from '@storybook/vue'`,
+        `import { configure, addDecorator } from '@storybook/vue'`
+      );
     }
 
     lint(api);
