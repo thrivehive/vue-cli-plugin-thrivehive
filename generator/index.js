@@ -1,19 +1,19 @@
 const { injectCode, replaceCode, lint } = require('./utils');
 
 const mainChanges = `
-import '@/utils/setup';`;
+import '@/utils/setup'`;
 
 const storybookConfigChanges = `
-import Vue from 'vue';
-import Vuetify from 'vuetify';
-import 'vuetify/dist/vuetify.css';
-import '@/utils/setup';
+import Vue from 'vue'
+import Vuetify from 'vuetify'
+import 'vuetify/dist/vuetify.css'
+import '@/utils/setup'
 
-Vue.use(Vuetify);
+Vue.use(Vuetify)
 
 addDecorator(() => ({
   template: '<v-app><story/></v-app>'
-}));`;
+}))`;
 
 module.exports = (api) => {
   api.extendPackage({
