@@ -25,8 +25,8 @@ module.exports = (api) => {
       'vee-validate': '^2.1.7'
     },
     devDependencies: {
-      '@thrivehive/eslint-config-node': '^1.0.4',
-      '@thrivehive/eslint-config-vue': '^1.0.4'
+      '@thrivehive/eslint-config-node': '^1.2.0',
+      '@thrivehive/eslint-config-vue': '^1.2.0'
     }
   });
   api.render('./template');
