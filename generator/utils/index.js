@@ -90,8 +90,8 @@ module.exports.injectCode = (api, relativePath, code) => {
 * @param {String} oldCode
 * @param {String} newCode
 */
-module.exports.replaceCode = (api, relativePath, oldCode, newCode) => {
-  const { content, filePath } = getFile(api, relativePath, true);
+module.exports.replaceCode = (api, relativePath, oldCode, newCode, addExtension = true) => {
+  const { content, filePath } = getFile(api, relativePath, addExtension);
   const output = content.replace(oldCode, newCode);
   fs.writeFileSync(filePath, output, encoding);
 };
