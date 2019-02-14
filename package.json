@@ -18,10 +18,10 @@
   },
   "homepage": "https://github.com/thrivehive/vue-cli-plugin-thrivehive#readme",
   "devDependencies": {
+    "@thrivehive/eslint-config-node": "^1.2.0",
     "eslint": "^5.12.1",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.15.0",
-    "@thrivehive/eslint-config-node": "latest"
+    "eslint-plugin-import": "^2.15.0"
   },
   "dependencies": {}
 }

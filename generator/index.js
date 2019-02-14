@@ -1,4 +1,9 @@
-const { injectCode, replaceCode, lint } = require('./utils');
+const {
+  injectReadme,
+  injectCode,
+  replaceCode,
+  lint
+} = require('./utils');
 
 const mainChanges = `
 import '@/utils/setup'`;
@@ -31,10 +36,10 @@ module.exports = (api) => {
   });
   api.render('./template');
   api.onCreateComplete(() => {
+    injectReadme(api);
     injectCode(api, './src/main', mainChanges);
 
     if (api.hasPlugin('storybook')) {
-      /* eslint-disable quotes */
       const storybookConfigPath = './config/storybook/config';
       injectCode(api, storybookConfigPath, storybookConfigChanges);
       replaceCode(
