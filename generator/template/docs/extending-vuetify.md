@@ -23,7 +23,7 @@ In order to pass these props and attributes down to the child component, `v-btn`
 </template>
 
 <script>
-import { VBtn } from 'vuetify';
+import { VBtn } from 'vuetify/lib';
 
 export default {
   name: 'custom-button',
