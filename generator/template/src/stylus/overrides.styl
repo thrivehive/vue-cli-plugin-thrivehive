@@ -1,0 +1,10 @@
+@import '~vuetify/src/stylus/settings/_variables'
+@import '~vuetify/src/stylus/theme.styl'
+
+@media only screen and (min-width: $grid-breakpoints.lg)
+  .container:not(.xl)
+    max-width: $grid-breakpoints.md !important
+
+@media only screen and (min-width: $grid-breakpoints.xl)
+  .container
+    max-width: $grid-breakpoints.lg !important

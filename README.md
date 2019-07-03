@@ -12,7 +12,7 @@ This [Vue CLI 3.x](https://cli.vuejs.org/) plugin does the following:
 - Update lint script to lint entire project
 - Lint and fix project after installation
 
-# Start a new project
+## Start a new project
 
 Install using [@thrivehive/vue-preset](https://github.com/thrivehive/vue-preset) for [Vue CLI 3.x](https://cli.vuejs.org/) (recommended):
 
@@ -28,9 +28,9 @@ Install the CLI Plugin:
 vue create --preset thrivehive/vue-preset <project-name>
 ```
 
-# Add to an existing project
+## Add to an existing project
 
-Adding to an existing project is not recommended, as CLI plugins may modify and/or overwrite existing modules. Make sure to commit before attempting this. 
+Adding to an existing project is not recommended, as CLI plugins may modify and/or overwrite existing modules. Make sure to commit before attempting this.
 
 If your project does not require [Vuetify](https://vuetifyjs.com/en/) or [Storybook](https://storybook.js.org/basics/guide-vue/), skip the first two commands.
 
@@ -40,7 +40,7 @@ vue add storybook
 vue add thrivehive
 ```
 
-# Releases
+## Releases
 
 - Run `npm version major|minor|patch` to increment version
 - Run `npm publish` to release
