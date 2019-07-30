@@ -1,7 +1,11 @@
 <template>
-  <svg class="logo" viewBox="0 0 282.4 48">
+  <svg
+    class="logo"
+    :class="logoClass"
+    viewBox="0 0 282.4 48"
+  >
     <g transform="translate(10.000000, 38.000000)">
-      <g class="mark">
+      <g class="mark" :class="logoClass">
         <path
           d="M21.7-27c0,1.6-1.3,2.8-2.9,2.8h-18c-1.6,0-2.9-1.3-2.9-2.8c0-1.6,1.3-2.8,2.9-2.8h18
             C20.4-29.9,21.7-28.6,21.7-27"
@@ -98,17 +102,32 @@
 
 <script>
 export default {
-  name: 'logo'
+  name: 'logo',
+  computed: {
+    logoClass() {
+      return ['blend'].filter((key) => key in this.$attrs);
+    }
+  }
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@mixin themeable {
+  &.blend {
+    color: currentColor;
+  }
+};
+
 .logo {
   display: block;
-  width: 100%;
-  fill: #232c5d;
+  max-width: 100%;
+  width: 400px;
+  fill: currentColor;
+  color: #232c5d;
+  @include themeable;
 }
 .mark {
-  fill: #49D19D;
+  color: #49D19D;
+  @include themeable;
 }
 </style>
