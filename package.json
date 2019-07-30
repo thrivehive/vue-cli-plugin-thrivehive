@@ -1,6 +1,6 @@
 {
   "name": "vue-cli-plugin-thrivehive",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Vue CLI plugin for Thrivehive projects",
   "main": "index.js",
   "scripts": {
